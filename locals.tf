@@ -18,8 +18,8 @@ locals {
     device_name = "${var.data_block_device_name}"
 
     ebs = [{
-      volume_type = "${var.data_block_device_type}"
-      volume_size = "${var.data_block_device_size}"
+      volume_type           = "${var.data_block_device_type}"
+      volume_size           = "${var.data_block_device_size}"
       delete_on_termination = "${var.data_block_device_delete_on_termination}"
     }]
   }
@@ -35,5 +35,5 @@ locals {
 
   //  https://github.com/hashicorp/terraform/issues/12453#issuecomment-311611817
   volume_end_index = "${var.enable_data_block_device ? 2 : 1}"
-  volume_devices = "${slice(local.volume_devices_with_data, 0, local.volume_end_index)}"
+  volume_devices   = "${slice(local.volume_devices_with_data, 0, local.volume_end_index)}"
 }
