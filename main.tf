@@ -190,7 +190,7 @@ resource "aws_autoscaling_group" "container_instance" {
   enabled_metrics           = ["${var.enabled_metrics}"]
   vpc_zone_identifier       = ["${var.subnet_ids}"]
 
-  tags = "${local.default_tags}"
+  tags = "${local.instance_tags}"
 }
 
 #

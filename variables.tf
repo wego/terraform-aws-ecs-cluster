@@ -122,3 +122,8 @@ variable "enabled_metrics" {
 variable "subnet_ids" {
   type = "list"
 }
+
+variable "instance_tags" {
+  type    = "list"
+  default = []
+}

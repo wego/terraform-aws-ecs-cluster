@@ -37,7 +37,7 @@ locals {
   volume_end_index = "${var.enable_data_block_device ? 2 : 1}"
   volume_devices   = "${slice(local.volume_devices_with_data, 0, local.volume_end_index)}"
 
-  default_tags = [
+  default_instance_tags = [
     {
       key                 = "Name"
       value               = "ContainerInstance"
@@ -54,4 +54,6 @@ locals {
       propagate_at_launch = true
     },
   ]
+
+  instance_tags = "${concat(local.default_instance_tags, var.instance_tags)}"
 }
