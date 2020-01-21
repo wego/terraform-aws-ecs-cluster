@@ -36,4 +36,22 @@ locals {
   //  https://github.com/hashicorp/terraform/issues/12453#issuecomment-311611817
   volume_end_index = "${var.enable_data_block_device ? 2 : 1}"
   volume_devices   = "${slice(local.volume_devices_with_data, 0, local.volume_end_index)}"
+
+  default_tags = [
+    {
+      key                 = "Name"
+      value               = "ContainerInstance"
+      propagate_at_launch = true
+    },
+    {
+      key                 = "Project"
+      value               = "${var.project}"
+      propagate_at_launch = true
+    },
+    {
+      key                 = "Environment"
+      value               = "${var.environment}"
+      propagate_at_launch = true
+    },
+  ]
 }
