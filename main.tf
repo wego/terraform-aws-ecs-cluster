@@ -180,6 +180,7 @@ resource "aws_autoscaling_group" "container_instance" {
     instances_distribution {
       on_demand_base_capacity                  = "${var.on_demand_base_capacity}"
       on_demand_percentage_above_base_capacity = "${var.on_demand_percentage_above_base_capacity}"
+      spot_allocation_strategy                 = "${var.spot_allocation_strategy}"
     }
 
     launch_template {

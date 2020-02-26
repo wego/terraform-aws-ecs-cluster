@@ -140,3 +140,7 @@ variable "on_demand_base_capacity" {
 variable "on_demand_percentage_above_base_capacity" {
   default = 100
 }
+
+variable "spot_allocation_strategy" {
+  default = "lowest-price"
+}
