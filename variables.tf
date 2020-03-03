@@ -127,3 +127,20 @@ variable "instance_tags" {
   type    = "list"
   default = []
 }
+
+variable "launch_template_override" {
+  type    = "list"
+  default = []
+}
+
+variable "on_demand_base_capacity" {
+  default = 0
+}
+
+variable "on_demand_percentage_above_base_capacity" {
+  default = 100
+}
+
+variable "spot_allocation_strategy" {
+  default = "lowest-price"
+}
